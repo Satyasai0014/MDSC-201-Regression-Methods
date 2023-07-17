@@ -1,0 +1,244 @@
+## $$MDSC-201(P)$$
+
+## $$Assignment-V$$
+
+### *Author : Akula Venkata Satya Sai Gopinadh*
+
+### *Date : 9-03-2023*
+
+## GGPLOT2
+
+```{r}
+# importing library ggplot2
+library(ggplot2)
+
+```
+
+```{r}
+data("iris")
+
+Irisdataplot <- ggplot(iris, aes(Sepal.Length, Petal.Length, colour=Species)) + geom_point(size=2.56)
+print(Irisdataplot)
+```
+
+```{r}
+print(Irisdataplot + labs(y="Petal length (cm)", x = "Sepal length (cm)") 
+   + ggtitle("Petal and sepal length of iris"))
+```
+
+### Adding text on the plot:
+
+```{r}
+Irisdataplot + annotate("text",x=5,y=6,label='Satya')
+```
+
+```{r}
+Irisdataplot + annotate("text",x=3:6, y =4:7, label = "Satya")
+```
+
+### Highlghting particular area :
+
+```{r}
+Irisdataplot + annotate("rect", xmin = 6, xmax = 7,ymin = 5, ymax = 6, alpha = 0.25)
+```
+
+### Segment:
+
+```{r}
+Irisdataplot + annotate("segment",x=5, xend = 7, y = 4, yend = 5, colour = "red")
+```
+
+```{r}
+head(iris)
+```
+
+```{r}
+p<-ggplot(iris, aes(Sepal.Length, Petal.Length, colour=Species)) + geom_point()
+p
+```
+
+```{r}
+
+#Removing  Legend
+p + theme(legend.position="none")
+```
+
+```{r}
+# Changing the legend position
+p + theme(legend.position="top")
+```
+
+### *Scatter Plot:*
+
+```{r}
+ggplot(iris, aes(Sepal.Length,Petal.Length)) +  geom_point()
+```
+
+### *Changing Attributes:*
+
+**(i) Changing Shape :**
+
+```{r}
+ggplot(iris, aes(Sepal.Length, Petal.Length)) + geom_point(shape=4)
+```
+
+**(ii) Changing Color :**
+
+```{r}
+ggplot(iris, aes(Sepal.Length,Petal.Length,colour=Species)) + geom_point(shape=5)
+```
+
+```{r}
+ggplot(iris, aes(Sepal.Length, Petal.Length, colour=Species)) +
+geom_point(shape=5,size=3) +
+ geom_smooth(method=lm)
+     
+```
+
+```{r}
+ggplot(iris,aes(Sepal.Length,Petal.Length)) + geom_point(size=1.5) + geom_jitter(aes(colour=Species))
+```
+
+### Bar Graph
+
+```{r}
+data(mpg)
+mpg
+```
+
+```{r}
+a<- ggplot(mpg,aes(x = factor(class))) + geom_bar(stat = "count")
+a
+```
+
+### Histogram:
+
+```{r}
+ggplot(data=mpg, aes(x=hwy)) + geom_histogram(col='black',fill='skyblue',alpha=.3,binwidth = 5)
+```
+
+### Pie Chart :
+
+```{r}
+df <- as.data.frame(table(iris$Species))
+df
+```
+
+```{r}
+
+pie <- ggplot(df, aes(x="",y =Freq, fill = factor(Var1))) + geom_bar(width = 1, stat = "identity") + theme(axis.line = element_blank(),
+plot.title = element_text(hjust=0.5)) +
+    labs(fill="Freq",
+       x=NULL,
+       y=NULL, 
+       title="Variety in Iris Species")
+       
+pie + coord_polar(theta = "y", start=0) 
+     
+```
+
+```{r}
+head(USArrests)
+
+
+
+```
+
+```{r}
+g <- ggplot(USArrests, aes(Murder,Assault)) + geom_count() + geom_smooth(method='lm',se=F)
+g
+```
+
+```{r}
+head(mtcars)
+```
+
+### *Bubble Chart*
+
+```{r}
+ggplot(mtcars, aes(x=cyl, y=disp, size = 10)) +geom_point(alpha=0.7,color='blue')
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+### *Let's Change the data set* :
+
+```{r}
+data()
+```
+
+### [*USArrests Dataset:*]{.underline}
+
+```{r}
+USArrests
+```
+
+```{r}
+ncol(USArrests)
+```
+
+```{r}
+nrow(USArrests)
+```
+
+### *Basic Plot :*
+
+```{r}
+bp <- ggplot(USArrests, aes(x=Murder,y =Assault)) + geom_point(size=3.5) 
+bp
+     
+```
+
+```{r}
+
+```
+
+```{r}
+head(USArrests)
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```

@@ -1,0 +1,193 @@
+# $$ MDSC-201(P)$$
+
+## $$Assignment - 6 - Csv.files$$
+
+### ***Author : Akula Venkata Satya Sai Gopinadh***
+
+### ***Date : 29-03-2023***
+
+**Getting and Setting the Working Directory**
+
+```{r}
+print(getwd())
+```
+
+```{r}
+setwd("C:/Users/Msc 1/Desktop/MDSC-201/201-R LAB")
+print(getwd())
+```
+
+### **Input as CSV File**
+
+```{r}
+data <- read.csv("data.csv")
+print(data)
+```
+
+### **Analyzing the CSV File**
+
+```{r}
+print(is.data.frame(data)) # checking whether the given csv file is a dataframe or not.
+
+```
+
+```{r}
+print(ncol(data)) # Prints number of columns in the given dataset
+```
+
+```{r}
+print(nrow(data))  # Prints number of rows in the given dataset
+```
+
+```{r}
+sal <- max(data$salary) # Getting  the max salary from data frame.
+paste("Maximum Salary in the given Csv file is : ",sal)
+```
+
+**It is giving only the maximum salary from the given data... But if we need more details about the person who is getting maximum salary.**
+
+```{r}
+
+
+person_details <- subset(data, salary == max(salary)) # the person details of whose salary is the HIGHEST or MAXIMUM
+print(person_details)
+
+
+```
+
+```{r}
+it_dep <- subset( data, dept == "IT") #Gets all the people working in IT department
+print(it_dep)
+```
+
+```{r}
+info <- subset(data, salary > 600 & dept == "IT") # Gets the persons in IT department whose salary is greater than 600
+print(info)
+```
+
+```{r}
+joined_date <- subset(data, as.Date(start_date) > as.Date("2014-01-01")) #Gets  the people who joined on or after 2014
+print(joined_date)
+```
+
+```{r}
+info <- subset(data, salary > 700 & dept == "Finance") # Gets the persons in IT department whose salary is greater than 600
+print(info)
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+### Using Another CSV file
+
+```{r}
+data2 <- read.csv("sample.csv")
+print(data2)
+```
+
+```{r}
+paste("Number of Columns is the csv file is : ",  (ncol(data2)) )
+```
+
+```{r}
+paste("Number of Rows is the csv file is : ",  (nrow(data2)) )
+```
+
+```{r}
+
+min_pro <- min(data2$projects)
+paste("Minimum count of project for a person is :",min_pro)
+```
+
+```{r}
+
+max_pro <- max(data2$projects)
+paste("Maximum count of project for a person is :",max_pro)
+```
+
+```{r}
+a <- subset(data2, department == "HR" & projects < 10 )
+#print("Details of people whpo belongs to HR dept and did projects lessthan 10 ")
+print(a)
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```

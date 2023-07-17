@@ -1,0 +1,183 @@
+---
+---
+---
+
+## $$MDSC-201(P)$$
+
+## $$Assignment-III$$
+
+### ***Author : Akula Venkata Satya Sai Gopinadh***
+
+***Date : 23-02-2023***
+
+## **User defined functions :**
+
+***1. Cube of a function with one Argument :***
+
+```{r}
+Cube<-function(a)
+{
+  for(i in 1:a){
+    print(i^3)
+  }
+}
+```
+
+```{r}
+Cube(6) # this will give cube values of six numbers starting with 1.
+```
+
+***2.Calling a Function with No Argument :***
+
+```{r}
+fact<-function()
+{
+ print(factorial(4)) # here factorial is a function
+}
+```
+
+```{r}
+fact()
+```
+
+**3. Function with more than ONE Argument :**
+
+```{r}
+power<-function(a=3,b=2){
+  print(a^b)
+}
+```
+
+```{r}
+power(5,3)
+```
+
+## **Lazy evaluation of a function :**
+
+```{r}
+lazy<- function(a, b) 
+{ 
+  print(a^2) 
+  print(a) 
+  
+  print(b^2)
+  print(b)
+}
+```
+
+```{r}
+lazy(4,6)
+```
+
+## R - Strings :
+
+```{r}
+ a <- "Hai , I am Satya ."
+ a
+ 
+```
+
+## Combining more Strings into one :
+
+```{r}
+b <- "This is Satya."
+c <- "How can i help you ??"
+
+paste(b,c)
+
+```
+
+```{r}
+d <- "Regression"
+e <- "Methods"
+
+print("This will give two strings combined without space in between them")
+
+
+paste(d,e,sep="")
+
+```
+
+```{r}
+f<-'Venkata'
+g<-'Satya'
+h<-'Sai'
+```
+
+```{r}
+# in this we are using inbuilt sep and collapse functions
+print(paste(f,g,h,sep='-'))
+
+print(paste(f,g,h,sep='',collapse=''))
+```
+
+```{r}
+# Characters count in given string
+
+i<-'Regression Methods'
+  
+nchar(i) 
+```
+
+```{r}
+# CHANGING CASE OF THE STRINg from lower-case to UPPER-CASE
+
+j <- "SATYA SAI"
+
+k <- "regression methods"
+
+```
+
+```{r}
+print(toupper(k)) # will give the lower case as uppercase
+```
+
+```{r}
+print(tolower(j)) # will change upper to lower
+
+```
+
+### Sub String:
+
+```{r}
+#Substring from a main string
+l<-("akula venkata satya sai gopinadh")
+
+substring(l,1,20)
+
+```
+
+### Format Function :
+
+```{r}
+m <- format("left", width = 10,  justify = "l")
+ 
+# Placing string in the center
+n <- format("center", width = 10,  justify = "c")
+ 
+# Placing string in the right
+p <- format("right", width = 10, justify = "r")
+ 
+# Getting the different string placement
+print(m)
+print(n)
+print(p)
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+### 
